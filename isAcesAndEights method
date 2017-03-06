@@ -1,0 +1,28 @@
+public static boolean isAcesAndEights(Hand h, HandScore hs)
+	{
+		boolean isAcesAndEights = false;
+		ArrayList<Card> kickers = new ArrayList<Card>();
+		if ((h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank() == h.getCardsInHand()
+				.get(eCardNo.SecondCard.getCardNo()).geteRank() && h.getCardsInHand().get(eCardNo
+						.FirstCard.getCardNo()).geteRank() == eRank.ACE && h.getCardsInHand()
+						.get(eCardNo.ThirdCard.getCardNo()).geteRank() == h.getCardsInHand()
+						.get(eCardNo.FourthCard.getCardNo()).geteRank() && h.getCardsInHand()
+						.get(eCardNo.ThirdCard.getCardNo()).geteRank() ==  eRank.EIGHT)){
+			isAcesAndEights = true;
+			hs.setHandStrength(eHandStrength.AcesAndEights);
+			hs.setHiHand(h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank());
+			hs.setLoHand(h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteRank());
+		}
+		else if ((h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank() == h.getCardsInHand()
+				.get(eCardNo.SecondCard.getCardNo()).geteRank() && h.getCardsInHand().get(eCardNo
+						.FirstCard.getCardNo()).geteRank() == eRank.EIGHT && h.getCardsInHand()
+						.get(eCardNo.ThirdCard.getCardNo()).geteRank() == h.getCardsInHand()
+						.get(eCardNo.FourthCard.getCardNo()).geteRank() && h.getCardsInHand()
+						.get(eCardNo.ThirdCard.getCardNo()).geteRank() ==  eRank.ACE)){
+			isAcesAndEights = true;
+			hs.setHandStrength(eHandStrength.AcesAndEights);
+			hs.setHiHand(h.getCardsInHand().get(eCardNo.ThirdCard.getCardNo()).geteRank());
+			hs.setLoHand(h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank());
+		}
+		return isAcesAndEights;
+	}	
